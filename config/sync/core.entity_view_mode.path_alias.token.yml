@@ -1,0 +1,11 @@
+uuid: afb68451-54b4-4384-917c-9aaed895860b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - path_alias
+id: path_alias.token
+label: Token
+description: null
+targetEntityType: path_alias
+cache: true
