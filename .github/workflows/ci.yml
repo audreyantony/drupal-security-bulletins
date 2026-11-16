@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# LEAST PRIVILEGE: THE WORKFLOW ONLY NEEDS TO READ THE REPOSITORY.
+permissions:
+  contents: read
+
+jobs:
+  install:
+    name: Install site from configuration
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # INSTALLS DDEV AND STARTS THE PROJECT CONTAINERS.
+      - name: Set up DDEV
+        uses: ddev/github-action-setup-ddev@v1
+
+      - name: Validate Composer files
+        run: ddev composer validate
+
+      - name: Install dependencies
+        run: ddev composer install --no-interaction --no-progress
+
+      - name: Check dependencies for known vulnerabilities
+        run: ddev composer audit
+
+      - name: Install the site from exported configuration
+        run: ddev drush site:install --existing-config -y
+
+      # FAILS IF THE INSTALLED SITE DIFFERS FROM THE COMMITTED CONFIGURATION.
+      - name: Verify configuration is in sync
+        run: |
+          ddev drush config:export -y
+          test -z "$(git status --porcelain config/sync)"
