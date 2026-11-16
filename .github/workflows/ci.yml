@@ -38,4 +38,6 @@ jobs:
       - name: Verify configuration is in sync
         run: |
           ddev drush config:export -y
+          git status --porcelain config/sync
+          git diff --exit-code config/sync
           test -z "$(git status --porcelain config/sync)"
