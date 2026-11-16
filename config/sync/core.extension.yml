@@ -1,6 +1,11 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  admin_audit_trail: 0
+  admin_audit_trail_auth: 0
+  admin_audit_trail_node: 0
+  admin_audit_trail_user: 0
+  admin_audit_trail_user_roles: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
   announcements_feed: 0
@@ -37,6 +42,7 @@ module:
   path: 0
   path_alias: 0
   pgsql: 0
+  seckit: 0
   system: 0
   taxonomy: 0
   text: 0

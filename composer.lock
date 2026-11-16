@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbfce3cbe752a53fb4ea9749a8b87163",
+    "content-hash": "85d9d7351504e064e66d383c67251ad9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -968,6 +968,84 @@
             "time": "2026-10-01T06:59:29+00:00"
         },
         {
+            "name": "drupal/admin_audit_trail",
+            "version": "1.0.14",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/admin_audit_trail.git",
+                "reference": "1.0.14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/admin_audit_trail-1.0.14.zip",
+                "reference": "1.0.14",
+                "shasum": "c8f3318b0783cbd87e9562f68e5a5483b3fe1269"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11 || ^12"
+            },
+            "require-dev": {
+                "drupal/admin_audit_trail_auth": "*",
+                "drupal/entityqueue": "^1.7",
+                "drupal/group": "^3.3",
+                "drupal/openid_connect_windows_aad": "^2.0",
+                "drupal/paragraphs": "^1.19",
+                "drupal/redirect": "^1.11"
+            },
+            "suggest": {
+                "drupal/entityqueue": "Enable admin_audit_trail_entityqueue to log entity queue and subqueue events.",
+                "drupal/group": "Enable admin_audit_trail_group to log group events.",
+                "drupal/openid_connect_windows_aad": "Enable admin_audit_trail_openid_connect to log Active Directory (Windows AAD) logins.",
+                "drupal/paragraphs": "Enable admin_audit_trail_paragraphs to log paragraph events.",
+                "drupal/redirect": "Enable admin_audit_trail_redirect to log URL redirect events."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.14",
+                    "datestamp": "1794696536",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Vardot",
+                    "homepage": "https://www.drupal.org/vardot",
+                    "role": "Maintenance for D8 and D9 versions"
+                },
+                {
+                    "name": "mohammed j. razem",
+                    "homepage": "https://www.drupal.org/user/255384"
+                },
+                {
+                    "name": "omar alahmed",
+                    "homepage": "https://www.drupal.org/user/308031"
+                },
+                {
+                    "name": "rajab natshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
+                }
+            ],
+            "description": "This module track logs of specific events that you'd like to review.",
+            "homepage": "https://www.drupal.org/project/admin_audit_trail",
+            "keywords": [
+                "Actively maintained",
+                "Administration tools"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/admin_audit_trail",
+                "issues": "https://www.drupal.org/project/issues/admin_audit_trail"
+            },
+            "published-time": "2026-11-09T13:40:50+00:00"
+        },
+        {
             "name": "drupal/admin_toolbar",
             "version": "3.6.3",
             "source": {
@@ -1625,6 +1703,72 @@
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
             },
             "published-time": "2026-11-08T11:51:31+00:00"
+        },
+        {
+            "name": "drupal/seckit",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/seckit.git",
+                "reference": "2.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/seckit-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "34d38f2daaf99781ef6b7e7fbe2eeabc73a7ca16"
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.3",
+                    "datestamp": "1726075930",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "badjava",
+                    "homepage": "https://www.drupal.org/user/83372"
+                },
+                {
+                    "name": "jweowu",
+                    "homepage": "https://www.drupal.org/user/152788"
+                },
+                {
+                    "name": "mcdruid",
+                    "homepage": "https://www.drupal.org/user/255969"
+                },
+                {
+                    "name": "p0deje",
+                    "homepage": "https://www.drupal.org/user/529960"
+                },
+                {
+                    "name": "the_g_bomb",
+                    "homepage": "https://www.drupal.org/user/492012"
+                }
+            ],
+            "description": "SecKit provides Drupal with various security-hardening options.",
+            "homepage": "https://www.drupal.org/project/seckit",
+            "keywords": [
+                "Drupal",
+                "security"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/seckit",
+                "issues": "http://drupal.org/project/issues/seckit"
+            },
+            "published-time": "2024-09-11T09:54:18+00:00"
         },
         {
             "name": "drupal/token",

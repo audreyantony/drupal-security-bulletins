@@ -6,6 +6,7 @@ dependencies:
     - node.type.bulletin
     - workflows.workflow.editorial
   module:
+    - admin_audit_trail
     - content_moderation
     - node
     - system
@@ -15,6 +16,7 @@ label: Validateur
 weight: 5
 is_admin: false
 permissions:
+  - 'access admin audit trail'
   - 'access content overview'
   - 'access toolbar'
   - 'create bulletin content'
