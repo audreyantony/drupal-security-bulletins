@@ -1,0 +1,21 @@
+uuid: 9cde6f7a-0726-4ada-955c-be4b6fcf508e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_cve_id
+field_name: field_cve_id
+entity_type: node
+type: string
+settings:
+  max_length: 20
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

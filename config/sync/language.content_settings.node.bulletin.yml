@@ -1,0 +1,11 @@
+uuid: 598d33d7-415b-45c0-a1d5-5f3e4917cd68
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.bulletin
+id: node.bulletin
+target_entity_type_id: node
+target_bundle: bulletin
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,44 @@
+uuid: 5e5ef65f-a53c-4d91-920d-9ef8cd35d9cf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.bulletin.field_cve_id
+    - field.field.node.bulletin.field_cvss_score
+    - field.field.node.bulletin.field_description
+    - field.field.node.bulletin.field_fix_available
+    - field.field.node.bulletin.field_products
+    - field.field.node.bulletin.field_references
+    - field.field.node.bulletin.field_severity
+    - field.field.node.bulletin.field_summary
+    - field.field.node.bulletin.field_vuln_type
+    - node.type.bulletin
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.bulletin.teaser
+targetEntityType: node
+bundle: bulletin
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_cve_id: true
+  field_cvss_score: true
+  field_description: true
+  field_fix_available: true
+  field_products: true
+  field_references: true
+  field_severity: true
+  field_summary: true
+  field_vuln_type: true
+  langcode: true

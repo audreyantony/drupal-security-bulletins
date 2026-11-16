@@ -1,0 +1,29 @@
+uuid: bed7a8d4-35c8-4c70-9e65-84ec48be991a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_products
+    - node.type.bulletin
+    - taxonomy.vocabulary.products
+id: node.bulletin.field_products
+field_name: field_products
+entity_type: node
+bundle: bulletin
+label: 'Produits concernés'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      products: products
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: e63ebd6a-dadd-4890-84d5-a9898e083663
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vuln_type
+    - node.type.bulletin
+    - taxonomy.vocabulary.vulnerability_types
+id: node.bulletin.field_vuln_type
+field_name: field_vuln_type
+entity_type: node
+bundle: bulletin
+label: 'Type de vulnérabilité'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vulnerability_types: vulnerability_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

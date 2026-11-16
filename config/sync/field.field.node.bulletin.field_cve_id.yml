@@ -1,0 +1,19 @@
+uuid: b69cb196-dce5-447b-97fd-5c010d347b26
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cve_id
+    - node.type.bulletin
+id: node.bulletin.field_cve_id
+field_name: field_cve_id
+entity_type: node
+bundle: bulletin
+label: 'Identifiant CVE'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

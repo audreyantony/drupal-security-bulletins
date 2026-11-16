@@ -1,0 +1,18 @@
+uuid: 2d968b88-206d-43de-86ba-9df93c9e1c8a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.bulletin
+id: node.bulletin.title
+field_name: title
+entity_type: node
+bundle: bulletin
+label: Bulletin
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

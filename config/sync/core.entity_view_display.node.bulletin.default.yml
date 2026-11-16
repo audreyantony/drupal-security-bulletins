@@ -1,0 +1,111 @@
+uuid: 0730047c-4220-4bfa-bd26-60d12686655f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.bulletin.field_cve_id
+    - field.field.node.bulletin.field_cvss_score
+    - field.field.node.bulletin.field_description
+    - field.field.node.bulletin.field_fix_available
+    - field.field.node.bulletin.field_products
+    - field.field.node.bulletin.field_references
+    - field.field.node.bulletin.field_severity
+    - field.field.node.bulletin.field_summary
+    - field.field.node.bulletin.field_vuln_type
+    - node.type.bulletin
+  module:
+    - link
+    - options
+    - text
+    - user
+id: node.bulletin.default
+targetEntityType: node
+bundle: bulletin
+mode: default
+content:
+  field_cve_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_cvss_score:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_fix_available:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_products:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_references:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_severity:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_vuln_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,21 @@
+uuid: 65e79936-1cd3-46bd-8d33-baa34f4e3e18
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fix_available
+    - node.type.bulletin
+id: node.bulletin.field_fix_available
+field_name: field_fix_available
+entity_type: node
+bundle: bulletin
+label: 'Correctif disponible'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

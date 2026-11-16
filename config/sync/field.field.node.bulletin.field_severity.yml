@@ -1,0 +1,21 @@
+uuid: f99eb424-fe52-4e9a-a599-b6bb55947cb9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_severity
+    - node.type.bulletin
+  module:
+    - options
+id: node.bulletin.field_severity
+field_name: field_severity
+entity_type: node
+bundle: bulletin
+label: Sévérité
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

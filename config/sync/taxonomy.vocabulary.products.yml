@@ -1,0 +1,9 @@
+uuid: cf25beaa-6bc2-4523-9393-5607584d9d68
+langcode: fr
+status: true
+dependencies: {  }
+name: products
+vid: products
+description: null
+weight: 0
+new_revision: false

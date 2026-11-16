@@ -1,0 +1,19 @@
+uuid: 00627eee-e483-4508-b212-adefed0cc46e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.bulletin
+id: node.bulletin.field_summary
+field_name: field_summary
+entity_type: node
+bundle: bulletin
+label: Résumé
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
