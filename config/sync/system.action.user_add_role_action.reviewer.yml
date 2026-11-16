@@ -1,0 +1,14 @@
+uuid: 0221c8e4-d100-4a34-a387-6d54b9d342cf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.reviewer
+  module:
+    - user
+id: user_add_role_action.reviewer
+label: 'Ajouter le rôle Validateur aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: reviewer

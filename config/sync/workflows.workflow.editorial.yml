@@ -1,0 +1,73 @@
+uuid: cadc149f-9bea-497b-a0ec-fc245883546c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.bulletin
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T7gMMyFbTYLalxpIOnzJebvek2OW0b1RgLVE9I2y228
+id: editorial
+label: Éditorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archivé
+      weight: 1
+      published: false
+      default_revision: true
+    draft:
+      label: Brouillon
+      weight: -2
+      published: false
+      default_revision: false
+    needs_review:
+      label: 'À valider'
+      weight: -1
+      published: false
+      default_revision: false
+    published:
+      label: Publié
+      weight: 0
+      published: true
+      default_revision: true
+  transitions:
+    archive:
+      label: Archiver
+      from:
+        - published
+      to: archived
+      weight: 2
+    archived_draft:
+      label: 'Restaurer à Brouillon'
+      from:
+        - archived
+      to: draft
+      weight: 3
+    create_new_draft:
+      label: 'Créer un Nouveau Brouillon'
+      from:
+        - draft
+        - needs_review
+        - published
+      to: draft
+      weight: 0
+    publish:
+      label: Publier
+      from:
+        - needs_review
+        - published
+      to: published
+      weight: 1
+    submit_for_review:
+      label: 'Soumettre à validation'
+      from:
+        - draft
+      to: needs_review
+      weight: 4
+  entity_types:
+    node:
+      - bulletin
+  default_moderation_state: draft

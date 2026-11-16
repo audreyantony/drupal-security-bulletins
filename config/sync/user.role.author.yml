@@ -1,0 +1,26 @@
+uuid: 1e98a880-3e72-4da7-b249-1eadb6b1ab07
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.bulletin
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - node
+    - system
+    - toolbar
+id: author
+label: Rédacteur
+weight: 4
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create bulletin content'
+  - 'edit own bulletin content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition submit_for_review'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view the administration theme'

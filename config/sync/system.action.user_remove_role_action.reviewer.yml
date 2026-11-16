@@ -1,0 +1,14 @@
+uuid: 98674537-3961-415d-a8d5-5c530678b8af
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.reviewer
+  module:
+    - user
+id: user_remove_role_action.reviewer
+label: 'Enlever le rôle Validateur des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: reviewer
