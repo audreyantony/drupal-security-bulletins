@@ -1,0 +1,23 @@
+uuid: fa3eca4c-1f43-46d1-8619-5a500fef5e99
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.bulletin
+  module:
+    - node
+id: bulletin
+label: bulletin
+type: 'canonical_entities:node'
+pattern: '/bulletins/[node:title]'
+selection_criteria:
+  fb8afde3-623a-4213-95c0-1278509cd8a1:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      bulletin: bulletin
+selection_logic: and
+weight: -5
+relationships: {  }

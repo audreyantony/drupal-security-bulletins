@@ -2,13 +2,13 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: fr
 uuid: 4d69b27c-fb51-4290-93d6-3b1417ecc45b
-name: 'Drush Site-Install'
+name: 'Bulletins de sécurité'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /accueil
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: fr
