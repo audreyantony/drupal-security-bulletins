@@ -1,0 +1,96 @@
+/* PAGE LAYOUT: CONTAINER, BACKGROUND LIGHT, DEMO BANNER, HEADER, MAIN, FOOTER. */
+.layout-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* DECORATIVE LIGHT BEHIND THE CONTENT. */
+.page-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 520px at 88% -8%, rgba(255, 140, 66, 0.2), transparent 70%),
+    radial-gradient(820px 620px at -8% 38%, rgba(139, 92, 246, 0.17), transparent 70%),
+    radial-gradient(760px 520px at 60% 105%, rgba(255, 92, 122, 0.12), transparent 70%);
+}
+
+.layout-container > :not(.page-glow) {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.demo-banner {
+  margin: 0;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--color-notice-border);
+  background: var(--color-notice-bg);
+  color: var(--color-notice-text);
+  font-size: 14px;
+  text-align: center;
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+}
+
+.site-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.site-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-block: var(--space-5) var(--space-8);
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block: var(--space-6);
+}
+
+.site-footer__note {
+  margin: 0;
+  color: var(--color-text-faint);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --container-padding: 20px;
+  }
+
+  .site-header__inner {
+    padding-block: var(--space-4);
+  }
+}

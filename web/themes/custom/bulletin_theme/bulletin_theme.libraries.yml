@@ -111,3 +111,15 @@ user:
     component:
       css/components/user.css:
         weight: -10
+global:
+  version: VERSION
+  css:
+    base:
+      css/base/fonts.css: {}
+      css/base/tokens.css: {}
+      css/base/elements.css: {}
+    layout:
+      css/layout/page.css: {}
+    theme:
+      css/theme/navigation.css: {}
+      css/theme/forms.css: {}

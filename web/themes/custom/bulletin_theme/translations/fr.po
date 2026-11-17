@@ -1,0 +1,10 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+msgid "Demonstration site: all products and bulletins are fictional."
+msgstr "Site de démonstration : tous les produits et bulletins sont fictifs."
+
+msgid "Demonstration portal. Products and bulletins are fictional."
+msgstr "Portail de démonstration. Produits et bulletins fictifs."

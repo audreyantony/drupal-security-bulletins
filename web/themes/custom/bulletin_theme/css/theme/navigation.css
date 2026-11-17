@@ -1,0 +1,76 @@
+/* SITE BRANDING, MAIN MENU AND ACCOUNT MENU. */
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-branding:hover {
+  color: var(--color-text);
+}
+
+.site-branding__logo {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.35);
+}
+
+.site-branding__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.site-header__nav .menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-header__nav .menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* 44PX MINIMUM HEIGHT FOR TOUCH TARGETS. */
+.site-header__nav .menu a {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text-soft);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.site-header__nav .menu a:hover {
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+}
+
+.site-header__nav .menu a.is-active,
+.site-header__nav .menu-item--active-trail > a {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text);
+}
+
+.region-secondary-menu {
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-border-strong);
+}
+
+.region-secondary-menu .menu a {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+}

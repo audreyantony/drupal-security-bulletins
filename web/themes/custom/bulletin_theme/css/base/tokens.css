@@ -1,0 +1,64 @@
+/* DESIGN TOKENS FROM THE VALIDATED MOCKUP. ALL OTHER CSS USES THESE VARIABLES. */
+:root {
+  /* SURFACES */
+  --color-bg: #0b0a0f;
+  --color-surface: rgba(255, 255, 255, 0.035);
+  --color-surface-strong: rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+
+  /* TEXT */
+  --color-text: #f4f1ee;
+  --color-text-soft: #cfc9d4;
+  --color-text-muted: #b8b2bd;
+  --color-text-faint: #9c95a3;
+
+  /* ACCENTS */
+  --color-link: #ffc27a;
+  --color-link-hover: #ffd9a8;
+  --color-focus: #ffc27a;
+  --color-success: #6ee7a8;
+  --color-on-accent: #1a1014;
+  --color-notice-text: #ffd08a;
+  --color-notice-bg: rgba(255, 181, 71, 0.1);
+  --color-notice-border: rgba(255, 181, 71, 0.22);
+  --gradient-brand: linear-gradient(135deg, #ffb547 0%, #ff6b6b 55%, #8b5cf6 100%);
+  --gradient-action: linear-gradient(135deg, #ffb547 0%, #ff7a59 100%);
+
+  /* SEVERITY: BASE COLOR FOR DOTS AND GAUGES, TEXT COLOR FOR LABELS */
+  --severity-critical: #ff5c7a;
+  --severity-critical-text: #ff9db0;
+  --severity-high: #ff9f45;
+  --severity-high-text: #ffb870;
+  --severity-medium: #f5d04a;
+  --severity-medium-text: #f7dc74;
+  --severity-low: #5cc8ff;
+  --severity-low-text: #8ad8ff;
+  --severity-none: #9c95a3;
+  --severity-none-text: #cfc9d4;
+
+  /* TYPOGRAPHY */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* SHAPES */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* SPACING */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 80px;
+
+  /* LAYOUT */
+  --container-width: 1200px;
+  --container-padding: 32px;
+}

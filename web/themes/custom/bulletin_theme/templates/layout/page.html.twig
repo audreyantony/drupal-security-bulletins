@@ -43,26 +43,32 @@
  */
 #}
 <div class="layout-container">
+  {# DECORATIVE BACKGROUND LIGHT, IGNORED BY SCREEN READERS #}
+  <div class="page-glow" aria-hidden="true"></div>
 
-  <header>
-    {{ page.header }}
+  <p class="demo-banner">{{ 'Demonstration site: all products and bulletins are fictional.'|t }}</p>
+
+  <header class="site-header">
+    <div class="site-header__inner container">
+      {{ page.header }}
+      {% if page.primary_menu or page.secondary_menu %}
+        <div class="site-header__nav">
+          {{ page.primary_menu }}
+          {{ page.secondary_menu }}
+        </div>
+      {% endif %}
+    </div>
   </header>
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  <main>
+  <main class="site-main container">
+    {{ page.breadcrumb }}
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {{ page.highlighted }}
+    {{ page.help }}
 
     <div class="layout-content">
       {{ page.content }}
-    </div>{# /.layout-content #}
+    </div>
 
     {% if page.sidebar_first %}
       <aside class="layout-sidebar-first">
@@ -71,17 +77,16 @@
     {% endif %}
 
     {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" >
+      <aside class="layout-sidebar-second">
         {{ page.sidebar_second }}
       </aside>
     {% endif %}
-
   </main>
 
-  {% if page.footer %}
-    <footer>
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <p class="site-footer__note">{{ 'Demonstration portal. Products and bulletins are fictional.'|t }}</p>
       {{ page.footer }}
-    </footer>
-  {% endif %}
-
-</div>{# /.layout-container #}
+    </div>
+  </footer>
+</div>
