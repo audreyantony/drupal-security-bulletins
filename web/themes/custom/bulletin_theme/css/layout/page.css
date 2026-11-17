@@ -94,3 +94,27 @@
     padding-block: var(--space-4);
   }
 }
+
+.site-footer__nav,
+.site-footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.site-footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__list a {
+  color: var(--color-text-soft);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-footer__list a:hover {
+  color: var(--color-text);
+}

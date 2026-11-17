@@ -123,3 +123,10 @@ global:
     theme:
       css/theme/navigation.css: {}
       css/theme/forms.css: {}
+      css/theme/views.css: {}
+      css/theme/messages.css: {}
+bulletin:
+  version: VERSION
+  css:
+    component:
+      css/components/bulletin.css: {}

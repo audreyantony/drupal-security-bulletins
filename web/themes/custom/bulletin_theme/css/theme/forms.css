@@ -60,3 +60,30 @@ textarea {
   background-position: right 16px center;
   background-repeat: no-repeat;
 }
+
+/* LOGIN FORM PRESENTED AS A CARD. */
+.user-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 460px;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.user-login-form .form-item,
+.user-login-form .form-actions {
+  margin: 0;
+}
+
+.user-login-form .form-text {
+  width: 100%;
+}
+
+.form-item .description {
+  margin-top: var(--space-2);
+  color: var(--color-text-faint);
+  font-size: 13px;
+}

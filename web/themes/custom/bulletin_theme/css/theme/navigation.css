@@ -74,3 +74,48 @@
   border: 1px solid var(--color-border-strong);
   color: var(--color-text);
 }
+
+/* LOCAL TASK TABS: LOGIN, PASSWORD RESET, EDIT, REVISIONS. */
+ul.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+ul.tabs > li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+ul.tabs > li > a {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: none;
+  color: var(--color-text-soft);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+ul.tabs > li > a:hover {
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+}
+
+ul.tabs > li > a.is-active,
+ul.tabs > li.is-active > a {
+  border-color: var(--color-border-strong);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text);
+}

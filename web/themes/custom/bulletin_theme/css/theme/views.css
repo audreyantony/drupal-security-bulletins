@@ -1,0 +1,130 @@
+/* LISTING PAGES: INTRO, EXPOSED FILTERS, ROWS, EMPTY STATE AND PAGER. */
+.view-bulletins,
+.view-home {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.view-bulletins .view-header {
+  max-width: 600px;
+  color: var(--color-text-muted);
+  font-size: 18px;
+}
+
+ {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-4);
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: var(--color-surface);
+}
+
+.views-exposed-form {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: var(--color-surface);
+}
+
+/* STARTERKIT WRAPS FIELDS AND BUTTONS IN .form--inline: THAT WRAPPER IS THE FLEX ROW. */
+.views-exposed-form .form--inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+
+/* THE CLEARFIX PSEUDO-ELEMENT WOULD BECOME AN EMPTY FLEX ITEM. */
+.views-exposed-form .form--inline::after {
+  display: none;
+}
+
+.views-exposed-form .form--inline .form-item {
+  float: none;
+  flex: 1 1 200px;
+  min-width: 0;
+  margin: 0;
+}
+
+.views-exposed-form .form--inline .form-item .form-select {
+  width: 100%;
+  max-width: none;
+}
+
+.views-exposed-form .form--inline .form-actions {
+  float: none;
+  display: flex;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+/* THE RESET BUTTON IS SECONDARY: OUTLINED, NO GRADIENT. */
+.views-exposed-form .form-actions .button + .button {
+  border: 1px solid var(--color-border-strong);
+  background: none;
+  box-shadow: none;
+  color: var(--color-text-soft);
+}
+
+.view-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.view-empty {
+  padding: 28px;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+}
+
+.pager__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pager__item a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height:.views-exposed-form 44px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-soft);
+  text-decoration: none;
+}
+
+.pager__item.is-active a {
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+}
+
+.feed-link {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-soft);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.feed-link:hover {
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+}

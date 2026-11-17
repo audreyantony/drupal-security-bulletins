@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Severity badge: a colored dot plus a text label, never color alone.
+ *
+ * Variables:
+ * - severity: key and label.
+ * - size: optional, 'large' on the bulletin page.
+ */
+#}
+<span class="severity-badge severity--{{ severity.key|clean_class }}{{ size == 'large' ? ' severity-badge--large' }}">
+  <span class="severity-badge__dot" aria-hidden="true"></span>
+  {{ severity.label }}
+</span>

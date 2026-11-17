@@ -98,8 +98,8 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Appliquer
-          reset_button: false
+          submit_button: Filtrer
+          reset_button: true
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
           expose_sort_order: true
@@ -166,7 +166,7 @@ display:
           exposed: true
           expose:
             operator_id: field_products_target_id_op
-            label: 'Produits concernés (field_products)'
+            label: 'Produits concernés '
             description: ''
             use_operator: false
             operator: field_products_target_id_op
@@ -211,7 +211,7 @@ display:
           exposed: true
           expose:
             operator_id: field_severity_value_op
-            label: 'Sévérité (field_severity)'
+            label: 'Sévérité '
             description: ''
             use_operator: false
             operator: field_severity_value_op
@@ -246,12 +246,12 @@ display:
           admin_label: ''
           plugin_id: boolean
           operator: '='
-          value: '0'
+          value: All
           group: 1
           exposed: true
           expose:
             operator_id: ''
-            label: 'Correctif disponible (field_fix_available)'
+            label: 'Correctif disponible '
             description: ''
             use_operator: false
             operator: field_fix_available_value_op
@@ -335,6 +335,22 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      defaults:
+        header: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: 'Les vulnérabilités qui touchent les produits du parc, validées par l’équipe sécurité avant publication, avec leur score, leur impact et la marche à suivre.'
+            format: basic_html
+          tokenize: false
       display_extenders: {  }
       path: bulletins
       menu:

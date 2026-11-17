@@ -83,10 +83,19 @@
     {% endif %}
   </main>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="site-footer__inner container">
       <p class="site-footer__note">{{ 'Demonstration portal. Products and bulletins are fictional.'|t }}</p>
-      {{ page.footer }}
+      <div class="site-footer__nav">
+        {# FOOTER MENU BLOCKS WILL BE PLACED IN THIS REGION WITH THE DEMO CONTENT #}
+        {{ page.footer }}
+        <nav aria-label="{{ 'Project links'|t }}">
+          <ul class="site-footer__list">
+            <li><a href="{{ path('view.bulletins.feed_1') }}">{{ 'RSS feed'|t }}</a></li>
+            <li><a href="https://github.com/audreyantony/drupal-security-bulletins">{{ 'Source code'|t }}</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </footer>
 </div>

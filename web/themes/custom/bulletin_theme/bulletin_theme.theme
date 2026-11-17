@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Theme functions for Bulletin Theme.
+ */
+
+ use Drupal\node\NodeInterface;
+
+ /**
+ * Implements hook_preprocess_HOOK() for node templates.
+ *
+ * Prepares display values for bulletin templates so they stay free of logic.
+ */
+function bulletin_theme_preprocess_node(array &$variables): void {
+  $node = $variables['node'] ?? NULL;
+  if (!$node instanceof NodeInterface || $node->bundle() !== 'bulletin') {
+    return;
+  }
+
+  // SEVERITY KEY FOR CSS MODIFIERS, LABEL FROM THE FIELD'S ALLOWED VALUES.
+  $variables['severity'] = NULL;
+  $severity = $node->get('field_severity');
+  if (!$severity->isEmpty()) {
+    $key = $severity->value;
+    $labels = $severity->getSetting('allowed_values');
+    $variables['severity'] = [
+      'key' => $key,
+      'label' => $labels[$key] ?? $key,
+    ];
+  }
+
+  // CVSS SCORE WITH ONE DECIMAL, AND ITS POSITION ON A 0-100 GAUGE.
+  $variables['cvss'] = NULL;
+  if (!$node->get('field_cvss_score')->isEmpty()) {
+    $score = (float) $node->get('field_cvss_score')->value;
+    $variables['cvss'] = [
+      'value' => number_format($score, 1, '.', ''),
+      'percent' => (int) round($score * 10),
+    ];
+  }
+
+  $variables['cve_id'] = $node->get('field_cve_id')->value;
+
+  // NULL WHEN THE FIELD IS EMPTY, SO TEMPLATES CAN TELL "NO" FROM "UNKNOWN".
+  $fix = $node->get('field_fix_available');
+  $variables['fix_available'] = $fix->isEmpty() ? NULL : (bool) $fix->value;
+
+  $date_formatter = \Drupal::service('date.formatter');
+  $created = $node->getCreatedTime();
+  $variables['published'] = [
+    'label' => $date_formatter->format($created, 'custom', 'j F Y'),
+    'iso' => $date_formatter->format($created, 'custom', 'c'),
+  ];
+}

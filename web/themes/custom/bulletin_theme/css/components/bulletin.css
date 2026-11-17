@@ -1,0 +1,226 @@
+/* SEVERITY PALETTE: A MODIFIER SETS THE COLORS USED BY BADGES, SCORES AND GAUGES. */
+.bulletin-card,
+.bulletin,
+.severity-badge {
+  --sev: var(--severity-none);
+  --sev-text: var(--severity-none-text);
+}
+
+.severity--critical {
+  --sev: var(--severity-critical);
+  --sev-text: var(--severity-critical-text);
+}
+
+.severity--high {
+  --sev: var(--severity-high);
+  --sev-text: var(--severity-high-text);
+}
+
+.severity--medium {
+  --sev: var(--severity-medium);
+  --sev-text: var(--severity-medium-text);
+}
+
+.severity--low {
+  --sev: var(--severity-low);
+  --sev-text: var(--severity-low-text);
+}
+
+/* SEVERITY BADGE */
+.severity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--sev) 38%, transparent);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--sev) 14%, transparent);
+  color: var(--sev-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.severity-badge--large {
+  padding: 7px 14px;
+  font-size: 14px;
+}
+
+.severity-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sev);
+  box-shadow: 0 0 10px var(--sev);
+}
+
+.cve-id {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--color-surface-strong);
+  color: var(--color-text-soft);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* CVSS SCORE */
+.cvss-score {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 22px;
+  border: 1px solid color-mix(in srgb, var(--sev) 22%, transparent);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--sev) 7%, transparent);
+}
+
+.cvss-score__label {
+  color: var(--color-text-faint);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cvss-score__value {
+  margin: 0;
+}
+
+.cvss-score__number {
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cvss-score__max {
+  color: var(--color-text-faint);
+  font-size: 16px;
+}
+
+.cvss-score__gauge {
+  height: 6px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cvss-score__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--sev);
+  box-shadow: 0 0 12px var(--sev);
+}
+
+.cvss-score--large .cvss-score__number {
+  font-size: 72px;
+  letter-spacing: -0.03em;
+}
+
+.cvss-score--large .cvss-score__gauge {
+  height: 8px;
+}
+
+/* BULLETIN CARD */
+.bulletin-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.bulletin-card:hover {
+  border-color: var(--color-border-strong);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bulletin-card__body {
+  flex: 999 1 460px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bulletin-card__meta,
+.bulletin-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.bulletin-card__date {
+  color: var(--color-text-faint);
+  font-size: 13px;
+}
+
+.bulletin-card__title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.bulletin-card__title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.bulletin-card__title a:hover {
+  color: var(--color-link-hover);
+}
+
+.bulletin-card__summary {
+  color: var(--color-text-muted);
+}
+
+.bulletin-card__tags {
+  padding-top: 4px;
+  font-size: 13px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-strong);
+  color: var(--color-text-soft);
+}
+
+.tag a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tag a:hover {
+  color: var(--color-text);
+}
+
+.tag--outline {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: none;
+  color: var(--color-text-muted);
+}
+
+.fix-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fix-status--yes {
+  color: var(--color-success);
+}
+
+.fix-status--no {
+  color: var(--severity-high-text);
+}

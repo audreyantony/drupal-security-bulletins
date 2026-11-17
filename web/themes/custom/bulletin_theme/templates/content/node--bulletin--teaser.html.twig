@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Bulletin teaser: the card shown in listings.
+ *
+ * Variables added by bulletin_theme_preprocess_node():
+ * - severity: key and label, or NULL while the severity is not computed.
+ * - cvss: value with one decimal and percent for the gauge, or NULL.
+ * - cve_id: CVE identifier, or NULL.
+ * - fix_available: TRUE, FALSE, or NULL when unknown.
+ * - published: label and ISO date of creation.
+ */
+#}
+{{ attach_library('bulletin_theme/bulletin') }}
+{%
+  set classes = [
+    'bulletin-card',
+    severity ? 'severity--' ~ severity.key|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div class="bulletin-card__body">
+    <div class="bulletin-card__meta">
+      {% if severity %}
+        {% include '@bulletin_theme/components/severity-badge.html.twig' with { severity: severity } only %}
+      {% endif %}
+      {% if cve_id %}
+        <span class="cve-id">{{ cve_id }}</span>
+      {% endif %}
+      <time class="bulletin-card__date" datetime="{{ published.iso }}">{{ published.label }}</time>
+    </div>
+
+    {{ title_prefix }}
+    <h3{{ title_attributes.addClass('bulletin-card__title') }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h3>
+    {{ title_suffix }}
+
+    <div class="bulletin-card__summary">{{ content.field_summary.0 }}</div>
+
+    <div class="bulletin-card__tags">
+      {# RENDER EACH PRODUCT ITEM, SKIPPING RENDER ARRAY PROPERTIES #}
+      {% for item in content.field_products|filter((value, key) => key|first != '#') %}
+        <span class="tag">{{ item }}</span>
+      {% endfor %}
+      {% if content.field_vuln_type.0 %}
+        <span class="tag tag--outline">{{ content.field_vuln_type.0 }}</span>
+      {% endif %}
+      {% if fix_available is same as(true) %}
+        <span class="fix-status fix-status--yes">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          {{ 'Fix available'|t }}
+        </span>
+      {% elseif fix_available is same as(false) %}
+        <span class="fix-status fix-status--no">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+          {{ 'No fix yet'|t }}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if cvss %}
+    {% include '@bulletin_theme/components/cvss-score.html.twig' with { cvss: cvss } only %}
+  {% endif %}
+</article>

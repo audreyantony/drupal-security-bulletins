@@ -8,3 +8,27 @@ msgstr "Site de démonstration : tous les produits et bulletins sont fictifs."
 
 msgid "Demonstration portal. Products and bulletins are fictional."
 msgstr "Portail de démonstration. Produits et bulletins fictifs."
+
+msgid "CVSS score"
+msgstr "Score CVSS"
+
+msgid "Gauge: @score out of 10"
+msgstr "Jauge : @score sur 10"
+
+msgid "Fix available"
+msgstr "Correctif disponible"
+
+msgid "No fix yet"
+msgstr "Aucun correctif"
+
+msgid "Subscribe to the RSS feed"
+msgstr "S'abonner au flux RSS"
+
+msgid "Project links"
+msgstr "Liens du projet"
+
+msgid "RSS feed"
+msgstr "Flux RSS"
+
+msgid "Source code"
+msgstr "Code source"
