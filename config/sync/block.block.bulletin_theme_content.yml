@@ -1,0 +1,22 @@
+uuid: bc4239e3-7244-44ca-a143-1d69cdb0893d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bulletin_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: bulletin_theme_content
+theme: bulletin_theme
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  label_display: '0'
+  provider: system
+visibility: {  }

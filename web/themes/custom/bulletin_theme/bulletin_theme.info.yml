@@ -1,0 +1,26 @@
+name: 'Bulletin Theme'
+type: theme
+'base theme': false
+version: 1.0.0
+libraries:
+  - bulletin_theme/base
+  - bulletin_theme/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - bulletin_theme/user
+  core/drupal.dropbutton:
+    - bulletin_theme/dropbutton
+  core/drupal.dialog:
+    - bulletin_theme/dialog
+  file/drupal.file:
+    - bulletin_theme/file
+  core/drupal.item-list:
+    - bulletin_theme/item-list
+  core/drupal.progress:
+    - bulletin_theme/progress
+  core/drupal.tablesort:
+    - bulletin_theme/drupal.tablesort
+description: 'Dark theme for the security bulletins portal.'
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.4.12'

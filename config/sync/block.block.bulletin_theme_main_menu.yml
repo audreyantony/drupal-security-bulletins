@@ -1,0 +1,27 @@
+uuid: 3aa87af1-d774-4268-a714-fe103507691f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - bulletin_theme
+_core:
+  default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
+id: bulletin_theme_main_menu
+theme: bulletin_theme
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }
