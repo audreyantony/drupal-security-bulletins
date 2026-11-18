@@ -32,3 +32,36 @@ msgstr "Flux RSS"
 
 msgid "Source code"
 msgstr "Code source"
+
+msgid "Published on"
+msgstr "Publié le"
+
+msgid "References"
+msgstr "Références"
+
+msgid "Bulletin facts"
+msgstr "Fiche du bulletin"
+
+msgid "Severity"
+msgstr "Sévérité"
+
+msgid "Affected products"
+msgstr "Produits concernés"
+
+msgid "Vulnerability type"
+msgstr "Type de vulnérabilité"
+
+msgid "Fix"
+msgstr "Correctif"
+
+msgid "Available"
+msgstr "Disponible"
+
+msgid "Not available yet"
+msgstr "Pas encore disponible"
+
+msgid "Identifier"
+msgstr "Identifiant"
+
+msgid "All bulletins"
+msgstr "Tous les bulletins"

@@ -53,3 +53,18 @@ function bulletin_theme_preprocess_node(array &$variables): void {
     'iso' => $date_formatter->format($created, 'custom', 'c'),
   ];
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ *
+ * On a bulletin's own page, the node template prints the title in its header,
+ * so the page title block would duplicate it.
+ */
+function bulletin_theme_preprocess_page(array &$variables): void {
+  $node = $variables['node'] ?? NULL;
+  if ($node instanceof NodeInterface
+    && $node->bundle() === 'bulletin'
+    && \Drupal::routeMatch()->getRouteName() === 'entity.node.canonical') {
+    unset($variables['page']['content']['bulletin_theme_page_title']);
+  }
+}

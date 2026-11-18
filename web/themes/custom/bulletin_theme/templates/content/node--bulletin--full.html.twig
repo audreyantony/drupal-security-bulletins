@@ -1,0 +1,119 @@
+{#
+/**
+ * @file
+ * Bulletin full view: header, description, references and a facts sidebar.
+ *
+ * On the bulletin's own page, bulletin_theme_preprocess_page() removes the page
+ * title block, so the title is printed here as the page heading.
+ *
+ * Variables added by bulletin_theme_preprocess_node(): see
+ * node--bulletin--teaser.html.twig.
+ */
+#}
+{{ attach_library('bulletin_theme/bulletin') }}
+{%
+  set classes = [
+    'bulletin',
+    severity ? 'severity--' ~ severity.key|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <header class="bulletin__hero">
+    <div class="bulletin__meta">
+      {% if severity %}
+        {% include '@bulletin_theme/components/severity-badge.html.twig' with { severity: severity, size: 'large' } only %}
+      {% endif %}
+      {% if cve_id %}
+        <span class="cve-id">{{ cve_id }}</span>
+      {% endif %}
+      <span class="bulletin__date">{{ 'Published on'|t }} <time datetime="{{ published.iso }}">{{ published.label }}</time></span>
+    </div>
+
+    {{ title_prefix }}
+    {% if page %}
+      <h1{{ title_attributes.addClass('bulletin__title') }}>{{ label }}</h1>
+    {% else %}
+      <h2{{ title_attributes.addClass('bulletin__title') }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+
+    <div class="bulletin__lead">{{ content.field_summary.0 }}</div>
+  </header>
+
+  <div class="bulletin__layout">
+    <div class="bulletin__main">
+      <section class="bulletin__panel bulletin__text" aria-label="{{ 'Description'|t }}">
+        {{ content.field_description.0 }}
+      </section>
+
+      {% if content.field_references.0 %}
+        <section class="bulletin__panel bulletin__references" aria-labelledby="bulletin-references-title">
+          <h2 id="bulletin-references-title">{{ 'References'|t }}</h2>
+          <ul>
+            {% for item in content.field_references|filter((value, key) => key|first != '#') %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+    </div>
+
+    <aside class="bulletin__aside" aria-label="{{ 'Bulletin facts'|t }}">
+      {% if cvss %}
+        {% include '@bulletin_theme/components/cvss-score.html.twig' with { cvss: cvss, size: 'large' } only %}
+      {% endif %}
+
+      <dl class="bulletin__panel bulletin__facts">
+        {% if severity %}
+          <div>
+            <dt>{{ 'Severity'|t }}</dt>
+            <dd>{% include '@bulletin_theme/components/severity-badge.html.twig' with { severity: severity } only %}</dd>
+          </div>
+        {% endif %}
+        <div>
+          <dt>{{ 'Affected products'|t }}</dt>
+          <dd class="bulletin__tags">
+            {% for item in content.field_products|filter((value, key) => key|first != '#') %}
+              <span class="tag">{{ item }}</span>
+            {% endfor %}
+          </dd>
+        </div>
+        {% if content.field_vuln_type.0 %}
+          <div>
+            <dt>{{ 'Vulnerability type'|t }}</dt>
+            <dd>{{ content.field_vuln_type.0 }}</dd>
+          </div>
+        {% endif %}
+        {% if fix_available is not null %}
+          <div>
+            <dt>{{ 'Fix'|t }}</dt>
+            <dd>
+              {% if fix_available %}
+                <span class="fix-status fix-status--yes">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+                  {{ 'Available'|t }}
+                </span>
+              {% else %}
+                <span class="fix-status fix-status--no">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+                  {{ 'Not available yet'|t }}
+                </span>
+              {% endif %}
+            </dd>
+          </div>
+        {% endif %}
+        {% if cve_id %}
+          <div>
+            <dt>{{ 'Identifier'|t }}</dt>
+            <dd><span class="cve-id">{{ cve_id }}</span></dd>
+          </div>
+        {% endif %}
+      </dl>
+
+      <a class="bulletin__back" href="{{ path('view.bulletins.page_1') }}">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        {{ 'All bulletins'|t }}
+      </a>
+    </aside>
+  </div>
+</article>

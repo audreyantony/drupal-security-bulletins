@@ -129,7 +129,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: machine_name
-          label: Importance
+          label: Sévérité
           exclude: true
           alter:
             alter_text: false
@@ -553,7 +553,7 @@ display:
           exposed: true
           expose:
             operator_id: severity_op
-            label: Importance
+            label: Sévérité
             description: ''
             use_operator: false
             operator: severity_op
