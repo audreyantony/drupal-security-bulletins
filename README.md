@@ -14,6 +14,8 @@ A small Drupal 11 site publishing security bulletins, built as a learning projec
 - Editorial workflow: authors submit, reviewers publish
 - Filterable listing, RSS feed, clean URLs
 - Audit trail and security headers (CSP) through contributed modules
+- Custom dark theme generated with Starterkit: Twig templates, self-hosted fonts, French interface translations
+- Accessibility: Lighthouse score of 100 on the home page, listing (desktop and mobile), bulletin page and login page; keyboard navigation checked manually
 
 ## Requirements
 
