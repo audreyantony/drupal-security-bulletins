@@ -68,3 +68,26 @@ samp {
   background: rgba(255, 194, 122, 0.35);
   color: var(--color-text);
 }
+
+/* SKIP LINK: HIDDEN UNTIL FOCUSED. CORE FORCES A STATIC POSITION ON FOCUS, SO IT IS STYLED IN PLACE. */
+.skip-link:focus {
+  display: inline-block;
+  margin: var(--space-3);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  background: var(--color-link);
+  color: var(--color-on-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* RESPECT THE SYSTEM SETTING THAT REDUCES ANIMATIONS. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
