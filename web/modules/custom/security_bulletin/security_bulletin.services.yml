@@ -1,0 +1,5 @@
+services:
+  security_bulletin.severity_calculator:
+    class: Drupal\security_bulletin\CvssV3SeverityCalculator
+  # ALIAS SO AUTOWIRED CLASSES CAN ASK FOR THE INTERFACE.
+  Drupal\security_bulletin\SeverityCalculatorInterface: '@security_bulletin.severity_calculator'
