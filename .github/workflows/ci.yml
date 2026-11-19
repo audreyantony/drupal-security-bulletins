@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # INSTALLS DDEV AND STARTS THE PROJECT CONTAINERS.
       - name: Set up DDEV
