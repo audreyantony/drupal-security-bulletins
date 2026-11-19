@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * DEFAULT MARKUP OF THE CVSS BADGE. THEMES OVERRIDE THIS TEMPLATE TO STYLE IT.
+ *
+ * AVAILABLE VARIABLES:
+ * - score: THE SCORE WITH ONE DECIMAL.
+ * - percent: POSITION OF THE SCORE ON A 0-100 GAUGE.
+ * - severity: SEVERITY KEY, USED AS A CSS MODIFIER.
+ * - size: 'default' OR 'large'.
+ */
+#}
+<div class="cvss-score severity--{{ severity|clean_class }}{{ size == 'large' ? ' cvss-score--large' }}">
+  <span class="cvss-score__label">{{ 'CVSS score'|t }}</span>
+  <meter class="cvss-score__gauge" min="0" max="10" value="{{ score }}">{{ score }} / 10</meter>
+  <span class="cvss-score__value">{{ score }} / 10</span>
+</div>

@@ -59,9 +59,8 @@
     </div>
 
     <aside class="bulletin__aside" aria-label="{{ 'Bulletin facts'|t }}">
-      {% if cvss %}
-        {% include '@bulletin_theme/components/cvss-score.html.twig' with { cvss: cvss, size: 'large' } only %}
-      {% endif %}
+      {# THE LARGE SIZE IS A SETTING OF THE FORMATTER IN THE DEFAULT DISPLAY #}
+      {{ content.field_cvss_score.0 }}
 
       <dl class="bulletin__panel bulletin__facts">
         {% if severity %}

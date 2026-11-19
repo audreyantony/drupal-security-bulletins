@@ -17,6 +17,7 @@ dependencies:
   module:
     - layout_builder
     - options
+    - security_bulletin
     - user
 third_party_settings:
   layout_builder:
@@ -28,13 +29,10 @@ bundle: bulletin
 mode: teaser
 content:
   field_cvss_score:
-    type: number_decimal
+    type: cvss_badge
     label: above
     settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
+      size: default
     third_party_settings: {  }
     weight: 1
     region: content

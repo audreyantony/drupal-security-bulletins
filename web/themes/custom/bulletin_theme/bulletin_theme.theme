@@ -30,16 +30,6 @@ function bulletin_theme_preprocess_node(array &$variables): void {
     ];
   }
 
-  // CVSS SCORE WITH ONE DECIMAL, AND ITS POSITION ON A 0-100 GAUGE.
-  $variables['cvss'] = NULL;
-  if (!$node->get('field_cvss_score')->isEmpty()) {
-    $score = (float) $node->get('field_cvss_score')->value;
-    $variables['cvss'] = [
-      'value' => number_format($score, 1, '.', ''),
-      'percent' => (int) round($score * 10),
-    ];
-  }
-
   $variables['cve_id'] = $node->get('field_cve_id')->value;
 
   // NULL WHEN THE FIELD IS EMPTY, SO TEMPLATES CAN TELL "NO" FROM "UNKNOWN".

@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * THEME OVERRIDE OF THE CVSS BADGE: SCORE, MAXIMUM AND A GLOWING GAUGE.
+ *
+ * COLORS COME FROM THE SEVERITY MODIFIER CLASS, SEE CSS/COMPONENTS/BULLETIN.CSS.
+ */
+#}
+{{ attach_library('bulletin_theme/bulletin') }}
+<div class="cvss-score severity--{{ severity|clean_class }}{{ size == 'large' ? ' cvss-score--large' }}">
+  <span class="cvss-score__label">{{ 'CVSS score'|t }}</span>
+  <p class="cvss-score__value">
+    <span class="cvss-score__number">{{ score }}</span>
+    <span class="cvss-score__max">/ 10</span>
+  </p>
+  <div class="cvss-score__gauge" role="img" aria-label="{{ 'Gauge: @score out of 10'|t({'@score': score}) }}">
+    <div class="cvss-score__fill" style="width: {{ percent }}%"></div>
+  </div>
+</div>

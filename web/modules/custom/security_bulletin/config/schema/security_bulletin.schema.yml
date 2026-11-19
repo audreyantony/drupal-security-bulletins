@@ -1,0 +1,8 @@
+# SETTINGS OF THE CVSS BADGE FORMATTER, STORED IN ENTITY VIEW DISPLAYS.
+field.formatter.settings.cvss_badge:
+  type: mapping
+  label: 'CVSS badge formatter settings'
+  mapping:
+    size:
+      type: string
+      label: 'Size'

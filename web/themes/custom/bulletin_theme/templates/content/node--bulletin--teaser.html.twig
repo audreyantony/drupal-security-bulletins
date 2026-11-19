@@ -5,7 +5,6 @@
  *
  * Variables added by bulletin_theme_preprocess_node():
  * - severity: key and label, or NULL while the severity is not computed.
- * - cvss: value with one decimal and percent for the gauge, or NULL.
  * - cve_id: CVE identifier, or NULL.
  * - fix_available: TRUE, FALSE, or NULL when unknown.
  * - published: label and ISO date of creation.
@@ -60,7 +59,6 @@
     </div>
   </div>
 
-  {% if cvss %}
-    {% include '@bulletin_theme/components/cvss-score.html.twig' with { cvss: cvss } only %}
-  {% endif %}
+  {# RENDERED BY THE CVSS_BADGE FORMATTER OF THE SECURITY_BULLETIN MODULE #}
+  {{ content.field_cvss_score.0 }}
 </article>

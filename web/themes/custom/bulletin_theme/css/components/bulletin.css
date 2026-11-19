@@ -1,7 +1,8 @@
 /* SEVERITY PALETTE: A MODIFIER SETS THE COLORS USED BY BADGES, SCORES AND GAUGES. */
 .bulletin-card,
 .bulletin,
-.severity-badge {
+.severity-badge,
+.cvss-score {
   --sev: var(--severity-none);
   --sev-text: var(--severity-none-text);
 }
