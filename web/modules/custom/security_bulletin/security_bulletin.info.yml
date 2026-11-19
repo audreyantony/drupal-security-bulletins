@@ -1,0 +1,12 @@
+name: 'Security Bulletin'
+type: module
+description: 'Computes bulletin severity from the CVSS score and provides display components for security bulletins.'
+package: Custom
+core_version_requirement: ^11.1
+dependencies:
+  - drupal:node
+  - drupal:options
+services:
+  security_bulletin.severity_calculator:
+    class: Drupal\security_bulletin\CvssV3SeverityCalculator
+  Drupal\security_bulletin\SeverityCalculatorInterface: '@security_bulletin.severity_calculator'
