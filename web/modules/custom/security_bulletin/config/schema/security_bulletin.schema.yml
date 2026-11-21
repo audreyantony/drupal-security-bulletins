@@ -6,3 +6,11 @@ field.formatter.settings.cvss_badge:
     size:
       type: string
       label: 'Size'
+# SETTINGS OF THE SEVERITY SUMMARY BLOCK.
+block.settings.security_bulletin_severity_summary:
+  type: block_settings
+  label: 'Bulletin severity summary block settings'
+  mapping:
+    days:
+      type: integer
+      label: 'Period in days'

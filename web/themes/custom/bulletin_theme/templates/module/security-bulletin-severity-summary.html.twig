@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * THEME OVERRIDE OF THE SEVERITY SUMMARY: ONE CLICKABLE TILE PER SEVERITY.
+ *
+ * EACH TILE LINKS TO THE LISTING FILTERED ON ITS SEVERITY.
+ */
+#}
+{{ attach_library('bulletin_theme/bulletin') }}
+<div class="severity-summary">
+  <div class="severity-summary__header">
+    <h2 class="severity-summary__title">{{ 'Published in the last @days days'|t({'@days': days}) }}</h2>
+    <span class="severity-summary__total">{{ 'Total: @count'|t({'@count': total}) }}</span>
+  </div>
+  <ul class="severity-summary__grid">
+    {% for item in items %}
+      <li>
+        <a class="severity-summary__tile severity--{{ item.key|clean_class }}" href="{{ item.url }}">
+          <span class="severity-summary__count">{{ item.count }}</span>
+          <span class="severity-summary__label">
+            <span class="severity-badge__dot" aria-hidden="true"></span>
+            {{ item.label }}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * DEFAULT MARKUP OF THE SEVERITY SUMMARY. THEMES OVERRIDE THIS TEMPLATE TO STYLE IT.
+ *
+ * AVAILABLE VARIABLES:
+ * - items: LIST OF SEVERITIES, EACH WITH key, label, count AND url.
+ * - days: LENGTH OF THE COUNTED PERIOD.
+ * - total: SUM OF ALL COUNTS.
+ */
+#}
+<div class="severity-summary">
+  <p>{{ 'Published in the last @days days'|t({'@days': days}) }}</p>
+  <ul>
+    {% for item in items %}
+      <li><a href="{{ item.url }}">{{ item.label }}: {{ item.count }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

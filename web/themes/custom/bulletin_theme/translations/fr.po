@@ -65,3 +65,9 @@ msgstr "Identifiant"
 
 msgid "All bulletins"
 msgstr "Tous les bulletins"
+
+msgid "Published in the last @days days"
+msgstr "Publiés ces @days derniers jours"
+
+msgid "Total: @count"
+msgstr "Total : @count"

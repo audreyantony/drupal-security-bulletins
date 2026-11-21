@@ -25,6 +25,13 @@ final class ThemeHooks {
           'size' => 'default',
         ],
       ],
+      'security_bulletin_severity_summary' => [
+        'variables' => [
+          'items' => [],
+          'days' => 30,
+          'total' => 0,
+        ],
+      ],
     ];
   }
 

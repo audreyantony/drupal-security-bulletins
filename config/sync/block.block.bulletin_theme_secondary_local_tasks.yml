@@ -9,7 +9,7 @@ _core:
 id: bulletin_theme_secondary_local_tasks
 theme: bulletin_theme
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:

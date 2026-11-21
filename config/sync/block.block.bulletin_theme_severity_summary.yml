@@ -1,0 +1,26 @@
+uuid: 2b7327f8-06eb-4053-8634-9fc85d74b8dc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - security_bulletin
+    - system
+  theme:
+    - bulletin_theme
+id: bulletin_theme_severity_summary
+theme: bulletin_theme
+region: content
+weight: -4
+provider: null
+plugin: security_bulletin_severity_summary
+settings:
+  id: security_bulletin_severity_summary
+  label: 'Synthèse par sévérité'
+  label_display: visible
+  provider: security_bulletin
+  days: 30
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/bulletins\r\n<front>"
