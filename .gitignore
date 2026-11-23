@@ -9,3 +9,4 @@
 /web/sites/*/settings.ddev.php
 /private/
 .env
+/.phpunit.cache/
