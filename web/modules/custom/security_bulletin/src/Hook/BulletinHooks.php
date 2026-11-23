@@ -26,7 +26,8 @@ final class BulletinHooks {
   /**
    * Implements hook_ENTITY_TYPE_presave() for node entities.
    *
-   * KEEPS THE STORED SEVERITY IN SYNC WITH THE CVSS SCORE, SO VIEWS CAN FILTER ON IT.
+   * KEEPS THE STORED SEVERITY IN SYNC WITH THE CVSS SCORE,
+   * SO VIEWS CAN FILTER ON IT.
    */
   #[Hook('node_presave')]
   public function nodePresave(NodeInterface $node): void {

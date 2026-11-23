@@ -5,9 +5,9 @@
  * Theme functions for Bulletin Theme.
  */
 
- use Drupal\node\NodeInterface;
+use Drupal\node\NodeInterface;
 
- /**
+/**
  * Implements hook_preprocess_HOOK() for node templates.
  *
  * Prepares display values for bulletin templates so they stay free of logic.

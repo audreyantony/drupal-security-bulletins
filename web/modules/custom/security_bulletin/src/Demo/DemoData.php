@@ -189,23 +189,23 @@ final class DemoData {
       'title' => 'À propos',
       'alias' => '/a-propos',
       'body' => '<p>Ce portail publie des bulletins de sécurité sur les produits d\'un parc informatique fictif. Chaque bulletin est rédigé, puis validé par l\'équipe sécurité avant sa publication.</p>'
-        . '<h2>Un projet d\'apprentissage</h2>'
-        . '<p>Ce site est un projet de démonstration construit avec Drupal 11 : modèle de contenu, workflow éditorial, thème sur mesure et module développé pour l\'occasion. Son code source est public.</p>'
-        . '<p><a href="https://github.com/audreyantony/drupal-security-bulletins">Voir le code source sur GitHub</a></p>'
-        . '<h2>Contenu fictif</h2>'
-        . '<p>Les produits, les vulnérabilités et les identifiants CVE présentés ici sont inventés. Ils ne décrivent aucun logiciel réel.</p>',
+      . '<h2>Un projet d\'apprentissage</h2>'
+      . '<p>Ce site est un projet de démonstration construit avec Drupal 11 : modèle de contenu, workflow éditorial, thème sur mesure et module développé pour l\'occasion. Son code source est public.</p>'
+      . '<p><a href="https://github.com/audreyantony/drupal-security-bulletins">Voir le code source sur GitHub</a></p>'
+      . '<h2>Contenu fictif</h2>'
+      . '<p>Les produits, les vulnérabilités et les identifiants CVE présentés ici sont inventés. Ils ne décrivent aucun logiciel réel.</p>',
     ],
     [
       'title' => 'Mentions légales',
       'alias' => '/mentions-legales',
       'body' => '<h2>Éditeur</h2>'
-        . '<p>[Nom de l\'éditrice], projet personnel non commercial.</p>'
-        . '<h2>Hébergement</h2>'
-        . '<p>[Nom, adresse et téléphone de l\'hébergeur]</p>'
-        . '<h2>Données personnelles</h2>'
-        . '<p>En dehors des journaux techniques du serveur, conservés pour sa sécurité, ce site ne collecte aucune donnée personnelle et ne dépose aucun cookie de mesure d\'audience. Un cookie de session est déposé uniquement lors de la connexion d\'un compte de rédaction.</p>'
-        . '<h2>Contenu</h2>'
-        . '<p>Les produits et bulletins de sécurité présentés sur ce site sont fictifs.</p>',
+      . '<p>[Nom de l\'éditrice], projet personnel non commercial.</p>'
+      . '<h2>Hébergement</h2>'
+      . '<p>[Nom, adresse et téléphone de l\'hébergeur]</p>'
+      . '<h2>Données personnelles</h2>'
+      . '<p>En dehors des journaux techniques du serveur, conservés pour sa sécurité, ce site ne collecte aucune donnée personnelle et ne dépose aucun cookie de mesure d\'audience. Un cookie de session est déposé uniquement lors de la connexion d\'un compte de rédaction.</p>'
+      . '<h2>Contenu</h2>'
+      . '<p>Les produits et bulletins de sécurité présentés sur ce site sont fictifs.</p>',
     ],
   ];
 

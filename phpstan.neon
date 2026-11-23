@@ -1,0 +1,17 @@
+# STATIC ANALYSIS OF THE CUSTOM MODULE AND THEME.
+parameters:
+  level: 6
+  paths:
+    - web/modules/custom
+    - web/themes/custom
+  fileExtensions:
+    - php
+    - module
+    - theme
+    - inc
+    - install
+  ignoreErrors:
+    # DRUPAL APIS USE UNTYPED ARRAYS: FORMS, RENDER ARRAYS, PLUGIN CONFIGURATION.
+    - identifier: missingType.iterableValue
+    # DRUPAL BASE CLASSES DECLARE GENERIC TYPES THAT CORE ITSELF DOES NOT FILL IN.
+    - identifier: missingType.generics

@@ -25,7 +25,7 @@ final class CvssBadgeFormatter extends FormatterBase {
   /**
    * THE SEVERITY CALCULATOR, SET IN CREATE().
    */
-  private SeverityCalculatorInterface $severityCalculator;
+  protected SeverityCalculatorInterface $severityCalculator;
 
   /**
    * {@inheritdoc}
@@ -77,12 +77,13 @@ final class CvssBadgeFormatter extends FormatterBase {
       if ($item->isEmpty()) {
         continue;
       }
-      $score = (float) $item->value;
+      $score = (float) $item->get('value')->getValue();
       $elements[$delta] = [
         '#theme' => 'security_bulletin_cvss_badge',
         '#score' => number_format($score, 1, '.', ''),
         '#percent' => (int) round($score * 10),
-        // COMPUTED FROM THE SCORE, SO THE FORMATTER WORKS EVEN WITHOUT A SEVERITY FIELD.
+        // COMPUTED FROM THE SCORE,
+        // SO THE FORMATTER WORKS EVEN WITHOUT A SEVERITY FIELD.
         '#severity' => $this->severityCalculator->fromScore($score)->value,
         '#size' => $this->getSetting('size'),
       ];

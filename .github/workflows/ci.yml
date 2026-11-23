@@ -28,6 +28,12 @@ jobs:
       - name: Install dependencies
         run: ddev composer install --no-interaction --no-progress
 
+      - name: Check coding standards
+        run: ddev exec vendor/bin/phpcs
+
+      - name: Run static analysis
+        run: ddev exec vendor/bin/phpstan analyse --no-progress --memory-limit=1G
+
       - name: Check dependencies for known vulnerabilities
         run: ddev composer audit
 

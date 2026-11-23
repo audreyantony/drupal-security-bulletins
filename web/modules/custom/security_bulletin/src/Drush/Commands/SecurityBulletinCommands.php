@@ -44,7 +44,8 @@ final class SecurityBulletinCommands extends DrushCommands {
   /**
    * CREATES THE FICTIONAL DEMO CONTENT.
    *
-   * RUNNING IT AGAIN IS SAFE: ITEMS WHOSE TITLE ALREADY EXISTS ARE KEPT AS THEY ARE.
+   * RUNNING IT AGAIN IS SAFE:
+   * ITEMS WHOSE TITLE ALREADY EXISTS ARE KEPT AS THEY ARE.
    */
   #[CLI\Command(name: 'security-bulletin:demo-content', aliases: ['sb-demo'])]
   #[CLI\Usage(name: 'drush security-bulletin:demo-content', description: 'Asks for confirmation, then creates products, bulletins, pages and footer links.')]
@@ -146,7 +147,9 @@ final class SecurityBulletinCommands extends DrushCommands {
   }
 
   /**
-   * ADDS A LINK TO A NODE IN THE FOOTER MENU, UNLESS ONE WITH THE SAME TITLE EXISTS.
+   * ADDS A FOOTER MENU LINK TO A NODE.
+   *
+   * NOTHING IS ADDED WHEN A LINK WITH THE SAME TITLE EXISTS.
    *
    * @param string $title
    *   THE LINK TITLE.
@@ -169,7 +172,9 @@ final class SecurityBulletinCommands extends DrushCommands {
   }
 
   /**
-   * BUILDS THE DESCRIPTION HTML: ONE HEADING PER SECTION, LIKE HAND-WRITTEN BULLETINS.
+   * BUILDS THE DESCRIPTION HTML OF A BULLETIN.
+   *
+   * ONE HEADING PER SECTION, LIKE HAND-WRITTEN BULLETINS.
    *
    * @param array $bulletin
    *   ONE ENTRY OF DEMODATA::BULLETINS.

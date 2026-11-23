@@ -17,7 +17,12 @@ final class CvssV3SeverityCalculator implements SeverityCalculatorInterface {
       throw new \InvalidArgumentException(sprintf('CVSS score must be between 0.0 and 10.0, %s given.', $score));
     }
 
-    // THRESHOLDS: 0.0 NONE, 0.1-3.9 LOW, 4.0-6.9 MEDIUM, 7.0-8.9 HIGH, 9.0-10.0 CRITICAL.
+    // THRESHOLDS:
+    // 0.0 NONE,
+    // 0.1-3.9 LOW,
+    // 4.0-6.9 MEDIUM,
+    // 7.0-8.9 HIGH,
+    // 9.0-10.0 CRITICAL.
     return match (TRUE) {
       $score === 0.0 => Severity::None,
       $score < 4.0 => Severity::Low,
