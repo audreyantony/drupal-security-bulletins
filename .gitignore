@@ -10,3 +10,4 @@
 /private/
 .env
 /.phpunit.cache/
+/web/sites/simpletest/

@@ -1,0 +1,6 @@
+# STANDS IN FOR THE BULLETINS VIEW, WHICH KERNEL TESTS DO NOT INSTALL.
+view.bulletins.page_1:
+  path: '/bulletins'
+  requirements:
+    # NO RESTRICTION NEEDED: TEST-ONLY ROUTE, NEVER VISITED, ONLY USED TO BUILD URLS.
+    _access: 'TRUE'

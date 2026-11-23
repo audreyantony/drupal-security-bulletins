@@ -34,8 +34,10 @@ jobs:
       - name: Run static analysis
         run: ddev exec vendor/bin/phpstan analyse --no-progress --memory-limit=1G
 
-      - name: Run unit tests
-        run: ddev exec vendor/bin/phpunit --testsuite unit  
+      - name: Run unit and kernel tests
+        run: |
+          mkdir -p web/sites/simpletest
+          ddev exec vendor/bin/phpunit
 
       - name: Check dependencies for known vulnerabilities
         run: ddev composer audit

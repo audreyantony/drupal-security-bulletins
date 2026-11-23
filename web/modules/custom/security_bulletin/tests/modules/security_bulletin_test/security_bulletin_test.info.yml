@@ -1,0 +1,6 @@
+name: 'Security Bulletin test'
+type: module
+description: 'Test helper: provides the listing route the severity summary block links to.'
+package: Testing
+core_version_requirement: ^11
+hidden: true
