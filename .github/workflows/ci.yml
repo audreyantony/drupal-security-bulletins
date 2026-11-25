@@ -52,3 +52,9 @@ jobs:
           git status --porcelain config/sync
           git diff --exit-code config/sync
           test -z "$(git status --porcelain config/sync)"
+
+      - name: Generate demo content
+        run: ddev drush security-bulletin:demo-content -y
+
+      - name: Run smoke tests
+        run: bash scripts/smoke-test.sh
